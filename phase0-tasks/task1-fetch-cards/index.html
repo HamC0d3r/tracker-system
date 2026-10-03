@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phase 0 Task 1 - Public API Fetch & Bootstrap 5 Cards</title>
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-light">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-grid-3x3-gap-fill text-primary"></i>
+        <span>API Card Explorer</span>
+      </a>
+      <span class="navbar-text badge bg-primary px-3 py-2 text-white">
+        Phase 0: Mini Task 1
+      </span>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="container my-5">
+    <!-- Header / Controls -->
+    <div class="row align-items-center mb-4 g-3">
+      <div class="col-md-6">
+        <h1 class="h3 fw-bold mb-1 text-dark">Recent Feed Items</h1>
+        <p class="text-muted mb-0">
+          Asynchronously fetched from JSONPlaceholder REST API.
+        </p>
+      </div>
+      <div class="col-md-6 d-flex justify-content-md-end gap-2">
+        <div class="input-group" style="max-width: 300px;">
+          <span class="input-group-text bg-white border-end-0">
+            <i class="bi bi-search text-muted"></i>
+          </span>
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control border-start-0"
+            placeholder="Filter cards..."
+            aria-label="Filter cards"
+          />
+        </div>
+        <button id="refreshBtn" class="btn btn-primary d-flex align-items-center gap-2 shadow-sm">
+          <i class="bi bi-arrow-clockwise"></i>
+          <span>Refresh</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-3 text-muted fw-semibold">Fetching data from API...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="errorAlert" class="alert alert-danger d-none shadow-sm" role="alert">
+      <div class="d-flex align-items-center">
+        <i class="bi bi-exclamation-triangle-fill fs-4 me-3"></i>
+        <div>
+          <h5 class="alert-heading mb-1">Failed to Load Content</h5>
+          <p id="errorMessage" class="mb-0">Unable to reach the remote API.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Grid Container -->
+    <div id="cardsGrid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-none">
+      <!-- Dynamic Cards Injected via JavaScript -->
+    </div>
+
+    <!-- Empty State for Filter -->
+    <div id="emptyState" class="text-center py-5 d-none">
+      <i class="bi bi-inbox fs-1 text-muted"></i>
+      <h5 class="mt-3 text-secondary">No matching cards found</h5>
+      <p class="text-muted">Try adjusting your search filter.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 text-muted border-top bg-white mt-auto">
+    <small>Expense Tracker &bull; Phase 0 Proof of Concept</small>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script src="app.js"></script>
+</body>
+</html>

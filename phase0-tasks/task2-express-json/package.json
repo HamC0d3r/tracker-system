@@ -1,0 +1,12 @@
+{
+  "name": "phase0-task2-express-json",
+  "version": "1.0.0",
+  "description": "Phase 0 Task 2: Express server returning structured JSON data",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

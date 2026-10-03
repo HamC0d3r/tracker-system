@@ -1,0 +1,21 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "Full-Stack Expense Tracker application with Node.js, Express, PostgreSQL, and modern responsive frontend",
+  "scripts": {
+    "start": "npm --prefix backend start",
+    "dev": "npm --prefix backend run dev",
+    "setup:backend": "npm --prefix backend install",
+    "test": "npm --prefix backend test"
+  },
+  "keywords": [
+    "expense-tracker",
+    "fullstack",
+    "express",
+    "postgresql",
+    "bootstrap5",
+    "chartjs"
+  ],
+  "author": "",
+  "license": "ISC"
+}
